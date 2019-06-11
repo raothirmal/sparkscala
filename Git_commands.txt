@@ -10,4 +10,20 @@
 
  get clone  https://github.com/raothirmal/sparkscala.git
 
-//Part 2
+ //To add a file from Local system to git hub
+
+ git add Git_commands.txt
+
+ //To know the status 
+
+ git status 
+
+ //To copy the you have to commit it by using
+
+ git commit -m "git commands" Git_commands.txt
+
+ //To pus trhe file to you git hub account
+
+ git push -u origin master
+
+ //part-2
