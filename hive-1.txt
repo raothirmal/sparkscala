@@ -1,0 +1,71 @@
+what is hive 
+
+1. it is sql like tool to queary the data
+2. It processes Structured data can be stored into Tables.
+3.efficnet for branch processing.
+4. Hive is lens between MapReduce and HDFS.
+5. Hive querys converted into MapReduce and run on the data
+6.It provides us various storage file formats like Parquet,Sequnence file,ORC file,Text file with significient compression.
+7.Hive is not a database, it just points to the data lying in HDFS
+8.Hive is not a tool for OLTP,
+9.It Dose not provide row level insert, Update and Delete 
+10.Update commands supports only ORC file formats
+11.Hive takes more time then RDBMS
+12.HIve doesn't support Unsturested data
+
+//Hive arcitucture 
+
+1. Hive UI : From Where user submits the query 
+		Types :HIve CLI
+		       Web Inerface
+		       Thirft Server
+
+2.Driver : It converst Qerys into Mapreduce jobs by using COMPILER
+3.Compiler : IT genearet the execution plan by using METASTORE
+4. Metastore :MYSQL database
+5.Execution  Engine: it excute the execution plan on resource manger and  name Nodes.
+
+
+// Hive commands
+ 
+ 1.Create database ktr_udemy (or) create database if not exists ktr_udemy
+
+ 2.describe database ktr_udemy.
+
+ 3. Creat database if not exists ktr_udemy comment "this is a temp database"
+
+ 4. desc database extended ktr_udemy
+
+ 5. create database if not exists ktr_udemy_temp with dbproperties('creator'='trkonduri','date'='2019-10-06');
+
+
+
+// create a table --> Hive doesnt through any error if tables exits if simply ignore the command
+
+  create table if not exists table1(name string, location array<string>,income int) row format delimited fields terminated by',' collection items  terminated by ':' lines terminated by '\n' stored as textfile;
+
+// Defalut Row termination Cntrl + A, Row Termination "\n" and stored as text file.
+
+
+//hive metastore
+
+set hive.matastore.warehouse.dir;
+
+// Load the data
+
+load data local inpath '/home/thackathon01/table1.txt' into table table1;
+
+load data local inpath '/home/thackathon01/table1.txt' overwrite into table table1; //To load replace 
+
+
+
+//Internal and external table;
+
+1.Internal table controled access hive.
+2.Both metadata and data contolled by hive
+3.If we delete the table both data and metadata will be deleted.
+3.We can acces these table trough hive only not by using other external applicatons.
+
+//external
+
+1. For external table data will be controlled by HDFS not Hive //Create external table
