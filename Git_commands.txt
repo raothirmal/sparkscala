@@ -1,0 +1,11 @@
+//To configure user GIThub account
+
+ git config --global user.name "raothirmal"
+
+ //also You have to configure your email 
+
+ git config --global user.email "raothirmal@gmail.com"
+
+ //To clone your repositary just copy the link first then use below command
+
+ get clone  https://github.com/raothirmal/sparkscala.git
