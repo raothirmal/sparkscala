@@ -9,3 +9,5 @@
  //To clone your repositary just copy the link first then use below command
 
  get clone  https://github.com/raothirmal/sparkscala.git
+
+//Part 2
